@@ -7,7 +7,7 @@ using std::cout;
 using std::cin;
 using std::endl;                // =)
 
-class Hero // Зачем?)) // Возможно стоит объединить с лвлом // Типа учусь использовать классы))
+class Hero // Зачем?)) // Возможно стоит объединить с лвлом //
 {
 public:
     string name, Class;
