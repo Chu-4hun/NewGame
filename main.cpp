@@ -2,13 +2,13 @@
 #include <ctime>
 #include <string>
 #include <Windows.h>
+
 using std::string;
 using std::cout;
 using std::cin;
 using std::endl;
 
-class Level
-{
+class Level {
 public:
     string Class, Back;
     int level = 1, Experience = 0, Skill = 1, Required_experience = 100, Gold = 200;
@@ -17,35 +17,30 @@ public:
 
     //проверка коммита Дани
     void Selecting_a_class() {
-        for (size_t i = 0; i < 1; i++)
-        {
+        for (size_t i = 0; i < 1; i++) {
             system("cls");
             cout << "Выберите класс за которые вы хотите играть" << "\n";
-            cout << "Воин - 1" << "\t" << "| атака - 20" << "\t" << "| Защита = 35" << "\t" << "| Магическая Сила = 5" << "\n";
-            cout << "Лучник - 2" << "\t" << "| атака - 35" << "\t" << "| Защита = 15" << "\t" << "| Магическая Сила = 10" << "\n";
-            cout << "Маг - 3  " << "\t" << "| атака - 15" << "\t" << "| Защита = 5" << "\t" << "| Магическая Сила = 35" << "\n";
+            cout << "Воин - 1" << "\t" << "| атака - 20" << "\t" << "| Защита = 35" << "\t" << "| Магическая Сила = 5"
+                 << "\n";
+            cout << "Лучник - 2" << "\t" << "| атака - 35" << "\t" << "| Защита = 15" << "\t"
+                 << "| Магическая Сила = 10" << "\n";
+            cout << "Маг - 3  " << "\t" << "| атака - 15" << "\t" << "| Защита = 5" << "\t" << "| Магическая Сила = 35"
+                 << "\n";
             cout << "Выбор: ";
             cin >> Class;
-            if (Class == "1")
-            {
+            if (Class == "1") {
                 Class = "Воин";
                 system("Pause");
                 break;
-            }
-            else if (Class == "2")
-            {
+            } else if (Class == "2") {
                 Class = "Лучник";
                 system("Pause");
                 break;
-            }
-            else if (Class == "3")
-            {
+            } else if (Class == "3") {
                 Class = "Маг";
                 system("Pause");
                 break;
-            }
-            else
-            {
+            } else {
                 system("cls");
                 cout << "Ошибка!!! " << "\n";
                 cout << "Выберите один из трёх классов " << "\n";
@@ -55,28 +50,24 @@ public:
             }
         }
     }
+
     // Начальные статы (возможны изменения статов)
     void Stat_Distribution() {
-        if (Class == "Воин")
-        {
+        if (Class == "Воин") {
             Hp = 120;
             Attack = 20;
             Protection = 35;
             Knowledge = 5;
             Magic_Power = 5;
             Mana = 10;
-        }
-        else if (Class == "Лучник")
-        {
+        } else if (Class == "Лучник") {
             Hp = 100;
             Attack = 35;
             Protection = 15;
             Knowledge = 10;
             Magic_Power = 10;
             Mana = 50;
-        }
-        else if (Class == "Маг")
-        {
+        } else if (Class == "Маг") {
             Hp = 100;
             Attack = 15;
             Protection = 5;
@@ -85,6 +76,7 @@ public:
             Mana = 100;
         }
     }
+
     // Вывод статов на консоль
     void characteristics() {
         system("cls");
@@ -104,17 +96,15 @@ public:
         cout << "--------------------------" << "\n";
         system("Pause");
     }
+
     // Прирост статов и работа с уровнем
     void Working_with_experience() {
-        for (size_t i = 0; i < 1; i++)
-        {
-            if (Experience >= Required_experience)
-            {
+        for (size_t i = 0; i < 1; i++) {
+            if (Experience >= Required_experience) {
                 level += 1;
                 Experience -= Required_experience;
                 Required_experience += level * 100;
-                if (Class == "Воин")
-                {
+                if (Class == "Воин") {
                     Hp_Max += (level * 12);
                     Attack += (level * 6);
                     Protection += (level * 8);
@@ -123,9 +113,7 @@ public:
                     Mana += (level * 2);
                     Skill += 1;
                     i--;
-                }
-                else if (Class == "Лучник")
-                {
+                } else if (Class == "Лучник") {
                     Hp_Max += (level * 8);
                     Attack += (level * 8);
                     Protection += (level * 4);
@@ -134,9 +122,7 @@ public:
                     Mana += (level * 4);
                     Skill += 1;
                     i--;
-                }
-                else if (Class == "Маг")
-                {
+                } else if (Class == "Маг") {
                     Hp_Max += (level * 4);
                     Attack += (level * 2);
                     Protection += (level * 2);
@@ -149,46 +135,34 @@ public:
             }
         }
     }
+
     // Таланты (В разработке) // Будет увеличение хп, атаки и прочие простые функции
     void Talents() {
-        if (Skill >= 1)
-        {
-            for (size_t i = 0; i < 3; i++)
-            {
+        if (Skill >= 1) {
+            for (size_t i = 0; i < 3; i++) {
                 int random = rand() % 5;
-                if (random == 0)
-                {
+                if (random == 0) {
                     cout << "Талант 1 ";
-                }
-                else if (random == 1)
-                {
+                } else if (random == 1) {
                     cout << "Талант 2 ";
-                }
-                else if (random == 2)
-                {
+                } else if (random == 2) {
                     cout << "Талант 3 ";
-                }
-                else if (random == 3)
-                {
+                } else if (random == 3) {
                     cout << "Талант 4 ";
-                }
-                else if (random == 4)
-                {
+                } else if (random == 4) {
                     cout << "Талант 5 ";
-                }
-                else
-                {
+                } else {
                     cout << random;
                 }
                 system("Pause");
             }
         }
     }
+
     // Отдых (Небольшая функция для регена hp в таверне)
     void Rest() {
         Hp += 40 * (Hp_Max / 100);
-        if (Hp > Hp_Max)
-        {
+        if (Hp > Hp_Max) {
             Hp = Hp_Max;
         }
     }
@@ -197,12 +171,12 @@ public:
 class Travelling // Выбор дальнейших действий
 {
 public:
-    int Talents = 1; string Button, tavern, inst, Specifications = "0", skip = "0", rest = "0", talent = "0";
+    int Talents = 1;
+    string Button, tavern, inst, Specifications = "0", skip = "0", rest = "0", talent = "0";
+
     int Route_selection() {
-        for (size_t i = 0; i < 1; i++)
-        {
-            if (skip == "0")
-            {
+        for (size_t i = 0; i < 1; i++) {
+            if (skip == "0") {
                 system("cls");
                 cout << "Вы стоите у путеводного камня, выберите ваше следующее действие: " << "\n";
                 cout << "Посетить таверну - 1 " << "\n";
@@ -211,15 +185,11 @@ public:
                 cout << "Выбор: ";
                 cin >> Button;
             }
-            for (size_t H = 0; H < 1; H++)
-            {
-                if (Button == "1" || tavern == "1" || skip == "1")
-                {
+            for (size_t H = 0; H < 1; H++) {
+                if (Button == "1" || tavern == "1" || skip == "1") {
                     tavern = "0";
-                    for (size_t v = 0; v < 1; v++)
-                    {
-                        if (skip == "0")
-                        {
+                    for (size_t v = 0; v < 1; v++) {
+                        if (skip == "0") {
                             system("cls");
                             cout << "Вы заходите в таверну и понимаете, что у вас есть следующие возможности:" << "\n";
                             cout << "Торговля - 1" << "\n";
@@ -228,11 +198,9 @@ public:
                             cout << "Ваши действия: ";
                             cin >> Button;
                         }
-                        if (Button == "1" || skip == "1")
-                        {
+                        if (Button == "1" || skip == "1") {
                             skip = "0";
-                            for (size_t Q = 0; Q < 1; Q++)
-                            {
+                            for (size_t Q = 0; Q < 1; Q++) {
                                 system("cls");
                                 cout << "Вы решаете заняться торговлей" << "\n";
                                 system("Pause");
@@ -244,8 +212,7 @@ public:
                                 cout << "Вернуться в главный зал - 4" << "\n";
                                 cout << "Ваши действия: " << "\n";
                                 cin >> Button;
-                                if (Button == "1")
-                                {
+                                if (Button == "1") {
                                     system("cls");
                                     cout << "Вы принимаете решение заручиться помощью новых союзников" << "\n";
                                     system("Pause");
@@ -259,8 +226,7 @@ public:
                                     cout << "Спросить про другие возможности - 3" << "\n";
                                     cout << "Вернуться в главный зал - 4" << "\n";
                                     cin >> Button;
-                                    if (Button == "1")
-                                    {
+                                    if (Button == "1") {
                                         system("cls");
                                         cout << "Вы можете нанять следующих юнитов: " << "\n";
                                         cout << "Демон Хантер -   150 hp | 25 атаки | 100 золотых" << "\n";
@@ -273,34 +239,23 @@ public:
                                         cout << "Спросить про другие возможности торговца - 4" << "\n";
                                         cout << "Вернуться в главный зал - 5" << "\n";
                                         cin >> Button;
-                                        if (Button == "1")
-                                        {
+                                        if (Button == "1") {
                                             ////////////
-                                        }
-                                        else if (Button == "2")
-                                        {
+                                        } else if (Button == "2") {
                                             /////////////
-                                        }
-                                        else if (Button == "3")
-                                        {
+                                        } else if (Button == "3") {
                                             //////////////
-                                        }
-                                        else if (Button == "4")
-                                        {
+                                        } else if (Button == "4") {
                                             system("cls");
                                             cout << "Вы решили узнать о других возможностях" << "\n";
                                             system("Pause");
                                             v--;
-                                        }
-                                        else if (Button == "5")
-                                        {
+                                        } else if (Button == "5") {
                                             system("cls");
                                             cout << "Вы решили вернуться в главный зал" << "\n";
                                             system("Pause");
                                             i--;
-                                        }
-                                        else
-                                        {
+                                        } else {
                                             system("cls");
                                             cout << "Ошибка!!! " << "\n";
                                             cout << "Выберите один из пяти вариантов " << "\n";
@@ -308,9 +263,7 @@ public:
                                             system("Pause");
                                             Q--;
                                         }
-                                    }
-                                    else if (Button == "2")
-                                    {
+                                    } else if (Button == "2") {
                                         system("cls");
                                         cout << "Вы можете нанять следующих юнитов: " << "\n";
                                         cout << "Мурлок -   15  hp |  5 атаки | 10  золотых" << "\n";
@@ -323,34 +276,23 @@ public:
                                         cout << "Спросить про другие возможности торговца - 4" << "\n";
                                         cout << "Вернуться в главный зал - 5" << "\n";
                                         cin >> Button;
-                                        if (Button == "1")
-                                        {
+                                        if (Button == "1") {
                                             ////////////
-                                        }
-                                        else if (Button == "2")
-                                        {
+                                        } else if (Button == "2") {
                                             /////////////
-                                        }
-                                        else if (Button == "3")
-                                        {
+                                        } else if (Button == "3") {
                                             //////////////
-                                        }
-                                        else if (Button == "4")
-                                        {
+                                        } else if (Button == "4") {
                                             system("cls");
                                             cout << "Вы решили узнать о других возможностях" << "\n";
                                             system("Pause");
                                             Q--;
-                                        }
-                                        else if (Button == "5")
-                                        {
+                                        } else if (Button == "5") {
                                             system("cls");
                                             cout << "Вы решили вернуться в главный зал" << "\n";
                                             system("Pause");
                                             v--;
-                                        }
-                                        else
-                                        {
+                                        } else {
                                             system("cls");
                                             cout << "Ошибка!!! " << "\n";
                                             cout << "Выберите один из пяти вариантов " << "\n";
@@ -358,23 +300,17 @@ public:
                                             system("Pause");
                                             Q--;
                                         }
-                                    }
-                                    else if (Button == "3")
-                                    {
+                                    } else if (Button == "3") {
                                         system("cls");
                                         cout << "Вы решили узнать о других возможностях" << "\n";
                                         system("Pause");
                                         Q--;
-                                    }
-                                    else if (Button == "4")
-                                    {
+                                    } else if (Button == "4") {
                                         system("cls");
                                         cout << "Вы решили вернуться в главный зал" << "\n";
                                         system("Pause");
                                         v--;
-                                    }
-                                    else
-                                    {
+                                    } else {
                                         system("cls");
                                         cout << "Ошибка!!! " << "\n";
                                         cout << "Выберите один из четырёх вариантов " << "\n";
@@ -382,41 +318,31 @@ public:
                                         system("Pause");
                                         Q--;
                                     }
-                                }
-                                else if (Button == "2")
-                                {
-                                    if (Talents >= 1)
-                                    {
+                                } else if (Button == "2") {
+                                    if (Talents >= 1) {
                                         system("cls");
                                         cout << "Вы открываете список талантов: " << "\n";
                                         system("Pause");
-                                        Talents -= 1; talent = "1";
-                                    }
-                                    else
-                                    {
+                                        Talents -= 1;
+                                        talent = "1";
+                                    } else {
                                         system("cls");
                                         cout << "У вас не хватает очков для прокачки талантов " << "\n";
                                         system("Pause");
                                         Q--;
                                     }
-                                }
-                                else if (Button == "3")
-                                {
+                                } else if (Button == "3") {
                                     system("cls");
                                     cout << "Вы решаете посмотреть свои характеристики: " << "\n";
                                     system("Pause");
                                     Specifications = "1";
                                     break;
-                                }
-                                else if (Button == "4")
-                                {
+                                } else if (Button == "4") {
                                     system("cls");
                                     cout << "Вы решили вернуться в главный зал" << "\n";
                                     system("Pause");
                                     v--;
-                                }
-                                else
-                                {
+                                } else {
                                     system("cls");
                                     cout << "Ошибка!!! " << "\n";
                                     cout << "Выберите один из четырёх вариантов " << "\n";
@@ -425,23 +351,17 @@ public:
                                     Q--;
                                 }
                             }
-                        }
-                        else if (Button == "2")
-                        {
+                        } else if (Button == "2") {
                             system("cls");
                             cout << "Вы решили отдохнуть" << "\n";
                             rest = "1";
                             system("Pause");
-                        }
-                        else if (Button == "3")
-                        {
+                        } else if (Button == "3") {
                             system("cls");
                             cout << "Вы решили вернуться к путеводному камню" << "\n";
                             system("Pause");
                             i--;
-                        }
-                        else
-                        {
+                        } else {
                             system("cls");
                             cout << "Ошибка!!! " << "\n";
                             cout << "Выберите один из трех вариантов " << "\n";
@@ -451,11 +371,8 @@ public:
                         }
                     }
                     break;
-                }
-                else if (Button == "2")
-                {
-                    for (size_t v = 0, s = 0; v < 1; v++)
-                    {
+                } else if (Button == "2") {
+                    for (size_t v = 0, s = 0; v < 1; v++) {
                         system("cls");
                         cout << "Вы отправляетесь в путешествие:" << "\n";
                         cout << "В таверну - 1" << "\n";
@@ -463,15 +380,14 @@ public:
                         cout << "К путеводному камню - 3" << "\n";
                         cout << "Ваши действия: ";
                         cin >> Button;
-                        if (Button == "1")
-                        {
+                        if (Button == "1") {
                             system("cls");
                             cout << "Вы принимаете решение отправиться в таверну " << "\n";
-                            Button == "0";  tavern = "1"; H--;
+                            Button == "0";
+                            tavern = "1";
+                            H--;
                             system("Pause");
-                        }
-                        else if (Button == "2")
-                        {
+                        } else if (Button == "2") {
                             system("cls");
                             cout << "Вы решаете отправиться в подземелье " << "\n";
                             system("Pause");
@@ -482,17 +398,13 @@ public:
                             cout << "Эпохальное подземелье - 3" << "\n";
                             cin >> inst;
                             break;
-                        }
-                        else if (Button == "3")
-                        {
+                        } else if (Button == "3") {
                             system("cls");
                             cout << "Вы решили вернуться к путеводному камню" << "\n";
                             system("Pause");
                             i--;
                             break;
-                        }
-                        else
-                        {
+                        } else {
                             system("cls");
                             cout << "Ошибка!!! " << "\n";
                             cout << "Выберите один из трёх вариантов " << "\n";
@@ -501,18 +413,14 @@ public:
                             v--;
                         }
                     }
-                }
-                else if (Button == "3")
-                {
+                } else if (Button == "3") {
                     system("cls");
                     cout << " ---------------------" << "\n";
                     cout << "  Спасибо за игру !!! " << "\n";
                     cout << " ---------------------" << "\n";
                     return 0;
                     break;
-                }
-                else
-                {
+                } else {
                     system("cls");
                     cout << "Ошибка!!! " << "\n";
                     cout << "Выберите один из трёх вариантов " << "\n";
@@ -525,9 +433,9 @@ public:
     }
 };
 
-int main()
-{
-    Level Level; Travelling Travelling;
+int main() {
+    Level Level;
+    Travelling Travelling;
     srand(time(NULL));
     setlocale(LC_ALL, "Russian");
     SetConsoleCP(1251);
@@ -540,19 +448,16 @@ int main()
     Level.Selecting_a_class(); // Выбор класса
     Level.Stat_Distribution(); // Начальные статы
     Level.characteristics();   // Демонстрация статов на консоли
-    for (size_t i = 0; i < 1; i++)
-    {
+    for (size_t i = 0; i < 1; i++) {
         Travelling.Route_selection(); // Таверна
-        if (Travelling.Specifications == "1")
-        {
+        if (Travelling.Specifications == "1") {
             Level.characteristics();
             Travelling.Specifications = "0";
             Travelling.skip = "1";
             Travelling.Button = "0";
             i--;
         }
-        if (Travelling.talent == "1")
-        {
+        if (Travelling.talent == "1") {
             Level.Talents();
             Travelling.talent = "0";
             Travelling.skip = "1";
