@@ -30,22 +30,18 @@ public:
             cin >> Class;
             if (Class == "1") {
                 Class = "Воин";
-                system("Pause");
                 break;
             } else if (Class == "2") {
                 Class = "Лучник";
-                system("Pause");
                 break;
             } else if (Class == "3") {
                 Class = "Маг";
-                system("Pause");
                 break;
             } else {
                 system("cls");
                 cout << "Ошибка!!! " << "\n";
                 cout << "Выберите один из трёх классов " << "\n";
                 cout << "Используя целые числа в диапазоне от 1 до 3 " << "\n";
-                system("Pause");
                 i--;
             }
         }
@@ -94,7 +90,6 @@ public:
         cout << "Мана = " << Mana << "\t" << "         |" << "\n";
         cout << "Очки навыков = " << Skill << "\t" << " | " << "\n";
         cout << "--------------------------" << "\n";
-        system("Pause");
     }
 
     // Прирост статов и работа с уровнем
@@ -154,7 +149,6 @@ public:
                 } else {
                     cout << random;
                 }
-                system("Pause");
             }
         }
     }
@@ -203,7 +197,6 @@ public:
                             for (size_t Q = 0; Q < 1; Q++) {
                                 system("cls");
                                 cout << "Вы решаете заняться торговлей" << "\n";
-                                system("Pause");
                                 system("cls");
                                 cout << "Вам доступны следующие опции: " << "\n";
                                 cout << "Найм отрядов  - 1" << "\n";
@@ -215,7 +208,6 @@ public:
                                 if (Button == "1") {
                                     system("cls");
                                     cout << "Вы принимаете решение заручиться помощью новых союзников" << "\n";
-                                    system("Pause");
                                     system("cls");
                                     cout << "У вас следующий выбор юнитов:" << "\n"; // реализовать
                                     cout << "Юниты человеческой расы" << "\n";
@@ -248,19 +240,16 @@ public:
                                         } else if (Button == "4") {
                                             system("cls");
                                             cout << "Вы решили узнать о других возможностях" << "\n";
-                                            system("Pause");
                                             v--;
                                         } else if (Button == "5") {
                                             system("cls");
                                             cout << "Вы решили вернуться в главный зал" << "\n";
-                                            system("Pause");
                                             i--;
                                         } else {
                                             system("cls");
                                             cout << "Ошибка!!! " << "\n";
                                             cout << "Выберите один из пяти вариантов " << "\n";
-                                            cout << "Используя целые числа в диапазоне от 1 до 5 " << "\n";
-                                            system("Pause");
+                                            cout << "Используя целые числа в диапазоне от 1 до 5 " << "\n";;
                                             Q--;
                                         }
                                     } else if (Button == "2") {
@@ -285,69 +274,58 @@ public:
                                         } else if (Button == "4") {
                                             system("cls");
                                             cout << "Вы решили узнать о других возможностях" << "\n";
-                                            system("Pause");
                                             Q--;
                                         } else if (Button == "5") {
                                             system("cls");
                                             cout << "Вы решили вернуться в главный зал" << "\n";
-                                            system("Pause");
                                             v--;
                                         } else {
                                             system("cls");
                                             cout << "Ошибка!!! " << "\n";
                                             cout << "Выберите один из пяти вариантов " << "\n";
                                             cout << "Используя целые числа в диапазоне от 1 до 5 " << "\n";
-                                            system("Pause");
                                             Q--;
                                         }
                                     } else if (Button == "3") {
                                         system("cls");
                                         cout << "Вы решили узнать о других возможностях" << "\n";
-                                        system("Pause");
                                         Q--;
                                     } else if (Button == "4") {
                                         system("cls");
                                         cout << "Вы решили вернуться в главный зал" << "\n";
-                                        system("Pause");
                                         v--;
                                     } else {
                                         system("cls");
                                         cout << "Ошибка!!! " << "\n";
                                         cout << "Выберите один из четырёх вариантов " << "\n";
                                         cout << "Используя целые числа в диапазоне от 1 до 4 " << "\n";
-                                        system("Pause");
                                         Q--;
                                     }
                                 } else if (Button == "2") {
                                     if (Talents >= 1) {
                                         system("cls");
                                         cout << "Вы открываете список талантов: " << "\n";
-                                        system("Pause");
                                         Talents -= 1;
                                         talent = "1";
                                     } else {
                                         system("cls");
                                         cout << "У вас не хватает очков для прокачки талантов " << "\n";
-                                        system("Pause");
                                         Q--;
                                     }
                                 } else if (Button == "3") {
                                     system("cls");
                                     cout << "Вы решаете посмотреть свои характеристики: " << "\n";
-                                    system("Pause");
                                     Specifications = "1";
                                     break;
                                 } else if (Button == "4") {
                                     system("cls");
                                     cout << "Вы решили вернуться в главный зал" << "\n";
-                                    system("Pause");
                                     v--;
                                 } else {
                                     system("cls");
                                     cout << "Ошибка!!! " << "\n";
                                     cout << "Выберите один из четырёх вариантов " << "\n";
                                     cout << "Используя целые числа в диапазоне от 1 до 4 " << "\n";
-                                    system("Pause");
                                     Q--;
                                 }
                             }
@@ -355,18 +333,15 @@ public:
                             system("cls");
                             cout << "Вы решили отдохнуть" << "\n";
                             rest = "1";
-                            system("Pause");
                         } else if (Button == "3") {
                             system("cls");
                             cout << "Вы решили вернуться к путеводному камню" << "\n";
-                            system("Pause");
                             i--;
                         } else {
                             system("cls");
                             cout << "Ошибка!!! " << "\n";
                             cout << "Выберите один из трех вариантов " << "\n";
                             cout << "Используя целые числа в диапазоне от 1 до 3 " << "\n";
-                            system("Pause");
                             v--;
                         }
                     }
@@ -386,11 +361,9 @@ public:
                             Button == "0";
                             tavern = "1";
                             H--;
-                            system("Pause");
                         } else if (Button == "2") {
                             system("cls");
                             cout << "Вы решаете отправиться в подземелье " << "\n";
-                            system("Pause");
                             system("cls");
                             cout << "Выберите сложность подземелья:" << "\n";
                             cout << "Обычное подземелье - 1" << "\n";
@@ -401,7 +374,6 @@ public:
                         } else if (Button == "3") {
                             system("cls");
                             cout << "Вы решили вернуться к путеводному камню" << "\n";
-                            system("Pause");
                             i--;
                             break;
                         } else {
@@ -409,7 +381,6 @@ public:
                             cout << "Ошибка!!! " << "\n";
                             cout << "Выберите один из трёх вариантов " << "\n";
                             cout << "Используя целые числа в диапазоне от 1 до 3 " << "\n";
-                            system("Pause");
                             v--;
                         }
                     }
@@ -425,7 +396,6 @@ public:
                     cout << "Ошибка!!! " << "\n";
                     cout << "Выберите один из трёх вариантов " << "\n";
                     cout << "Используя целые числа в диапазоне от 1 до 3 " << "\n";
-                    system("Pause");
                     i--;
                 }
             }
@@ -444,7 +414,6 @@ int main() {
     cout << "Введите имя: ";
     cin >> name;
     cout << "Рады приветствовать вас " << name << " в нашей замечательной игре " << "\n";
-    system("Pause");
     Level.Selecting_a_class(); // Выбор класса
     Level.Stat_Distribution(); // Начальные статы
     Level.characteristics();   // Демонстрация статов на консоли
@@ -468,7 +437,6 @@ int main() {
         {
             system("cls");
             cout << "Вы отдохнули " << "\n";
-            system("Pause");
             Level.Rest();
             Travelling.rest = "0";
             Travelling.skip = "1";
