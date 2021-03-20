@@ -15,7 +15,24 @@ public:
     double Hp, Hp_Max, Attack, Protection, Knowledge, Magic_Power, Mana;
     // Выбор класса (возможны изменения интерфейса или статов) 
 
-    //проверка коммита Дани
+    static void Dungeon(int difficulty){
+        switch(difficulty){
+            case 1:{
+                cout<<"Fucking slave!"<<endl;
+                break;
+            }
+            case 2:{
+                cout<<"Boy next door"<<endl;
+                break;
+            }
+            case 3:{
+                cout<<"Soo deep"<<endl;
+                break;
+            }
+            default:{cout<<"Введенное значение вне допустимого диапазона"<<endl;break;}
+        }
+    }
+
     void Selecting_a_class() {
         for (size_t i = 0; i < 1; i++) {
             system("cls");
@@ -30,12 +47,15 @@ public:
             cin >> Class;
             if (Class == "1") {
                 Class = "Воин";
+                Sleep(100);
                 break;
             } else if (Class == "2") {
                 Class = "Лучник";
+                Sleep(100);
                 break;
             } else if (Class == "3") {
                 Class = "Маг";
+                Sleep(100);
                 break;
             } else {
                 system("cls");
@@ -43,6 +63,7 @@ public:
                 cout << "Выберите один из трёх классов " << "\n";
                 cout << "Используя целые числа в диапазоне от 1 до 3 " << "\n";
                 i--;
+                Sleep(100);
             }
         }
     }
@@ -71,6 +92,7 @@ public:
             Magic_Power = 35;
             Mana = 100;
         }
+        Sleep(100);
     }
 
     // Вывод статов на консоль
@@ -90,6 +112,7 @@ public:
         cout << "Мана = " << Mana << "\t" << "         |" << "\n";
         cout << "Очки навыков = " << Skill << "\t" << " | " << "\n";
         cout << "--------------------------" << "\n";
+        Sleep(100);
     }
 
     // Прирост статов и работа с уровнем
@@ -108,6 +131,7 @@ public:
                     Mana += (level * 2);
                     Skill += 1;
                     i--;
+                    Sleep(100);
                 } else if (Class == "Лучник") {
                     Hp_Max += (level * 8);
                     Attack += (level * 8);
@@ -117,6 +141,7 @@ public:
                     Mana += (level * 4);
                     Skill += 1;
                     i--;
+                    Sleep(100);
                 } else if (Class == "Маг") {
                     Hp_Max += (level * 4);
                     Attack += (level * 2);
@@ -126,6 +151,7 @@ public:
                     Mana += (level * 10);
                     Skill += 1;
                     i--;
+                    Sleep(100);
                 }
             }
         }
@@ -164,13 +190,14 @@ public:
 
 class Travelling // Выбор дальнейших действий
 {
-public:
-    int Talents = 1;
-    string Button, tavern, inst, Specifications = "0", skip = "0", rest = "0", talent = "0";
+    public:
+    int Talents = 1,inst=0;
+    string tavern, Button = "0",  Specifications = "0", skip = "0", rest = "0", talent = "0";
 
-    int Route_selection() {
+    int Road_selection() {
         for (size_t i = 0; i < 1; i++) {
             if (skip == "0") {
+                Sleep(100);
                 system("cls");
                 cout << "Вы стоите у путеводного камня, выберите ваше следующее действие: " << "\n";
                 cout << "Посетить таверну - 1 " << "\n";
@@ -178,6 +205,7 @@ public:
                 cout << "Выход из игры - 3 " << "\n";
                 cout << "Выбор: ";
                 cin >> Button;
+                Sleep(100);
             }
             for (size_t H = 0; H < 1; H++) {
                 if (Button == "1" || tavern == "1" || skip == "1") {
@@ -191,13 +219,14 @@ public:
                             cout << "Вернуться к путеводному камню - 3" << "\n";
                             cout << "Ваши действия: ";
                             cin >> Button;
+                            Sleep(100);
                         }
                         if (Button == "1" || skip == "1") {
                             skip = "0";
                             for (size_t Q = 0; Q < 1; Q++) {
+                                Sleep(100);
                                 system("cls");
                                 cout << "Вы решаете заняться торговлей" << "\n";
-                                system("cls");
                                 cout << "Вам доступны следующие опции: " << "\n";
                                 cout << "Найм отрядов  - 1" << "\n";
                                 cout << "Использовать очки талантов  - 2" << "\n";
@@ -206,9 +235,9 @@ public:
                                 cout << "Ваши действия: " << "\n";
                                 cin >> Button;
                                 if (Button == "1") {
+                                    Sleep(100);
                                     system("cls");
                                     cout << "Вы принимаете решение заручиться помощью новых союзников" << "\n";
-                                    system("cls");
                                     cout << "У вас следующий выбор юнитов:" << "\n"; // реализовать
                                     cout << "Юниты человеческой расы" << "\n";
                                     cout << "Нелюди" << "\n";
@@ -219,6 +248,7 @@ public:
                                     cout << "Вернуться в главный зал - 4" << "\n";
                                     cin >> Button;
                                     if (Button == "1") {
+                                        Sleep(100);
                                         system("cls");
                                         cout << "Вы можете нанять следующих юнитов: " << "\n";
                                         cout << "Демон Хантер -   150 hp | 25 атаки | 100 золотых" << "\n";
@@ -253,6 +283,7 @@ public:
                                             Q--;
                                         }
                                     } else if (Button == "2") {
+                                        Sleep(100);
                                         system("cls");
                                         cout << "Вы можете нанять следующих юнитов: " << "\n";
                                         cout << "Мурлок -   15  hp |  5 атаки | 10  золотых" << "\n";
@@ -287,10 +318,12 @@ public:
                                             Q--;
                                         }
                                     } else if (Button == "3") {
+                                        Sleep(100);
                                         system("cls");
                                         cout << "Вы решили узнать о других возможностях" << "\n";
                                         Q--;
                                     } else if (Button == "4") {
+                                        Sleep(100);
                                         system("cls");
                                         cout << "Вы решили вернуться в главный зал" << "\n";
                                         v--;
@@ -303,25 +336,30 @@ public:
                                     }
                                 } else if (Button == "2") {
                                     if (Talents >= 1) {
+                                        Sleep(100);
                                         system("cls");
                                         cout << "Вы открываете список талантов: " << "\n";
                                         Talents -= 1;
                                         talent = "1";
                                     } else {
+                                        Sleep(100);
                                         system("cls");
                                         cout << "У вас не хватает очков для прокачки талантов " << "\n";
                                         Q--;
                                     }
                                 } else if (Button == "3") {
+                                    Sleep(100);
                                     system("cls");
                                     cout << "Вы решаете посмотреть свои характеристики: " << "\n";
                                     Specifications = "1";
                                     break;
                                 } else if (Button == "4") {
+                                    Sleep(100);
                                     system("cls");
                                     cout << "Вы решили вернуться в главный зал" << "\n";
                                     v--;
                                 } else {
+                                    Sleep(100);
                                     system("cls");
                                     cout << "Ошибка!!! " << "\n";
                                     cout << "Выберите один из четырёх вариантов " << "\n";
@@ -330,14 +368,17 @@ public:
                                 }
                             }
                         } else if (Button == "2") {
+                            Sleep(100);
                             system("cls");
                             cout << "Вы решили отдохнуть" << "\n";
                             rest = "1";
                         } else if (Button == "3") {
+                            Sleep(100);
                             system("cls");
                             cout << "Вы решили вернуться к путеводному камню" << "\n";
                             i--;
                         } else {
+                            Sleep(100);
                             system("cls");
                             cout << "Ошибка!!! " << "\n";
                             cout << "Выберите один из трех вариантов " << "\n";
@@ -348,6 +389,7 @@ public:
                     break;
                 } else if (Button == "2") {
                     for (size_t v = 0, s = 0; v < 1; v++) {
+                        Sleep(100);
                         system("cls");
                         cout << "Вы отправляетесь в путешествие:" << "\n";
                         cout << "В таверну - 1" << "\n";
@@ -356,27 +398,31 @@ public:
                         cout << "Ваши действия: ";
                         cin >> Button;
                         if (Button == "1") {
+                            Sleep(100);
                             system("cls");
                             cout << "Вы принимаете решение отправиться в таверну " << "\n";
                             Button == "0";
                             tavern = "1";
                             H--;
                         } else if (Button == "2") {
+                            Sleep(100);
                             system("cls");
                             cout << "Вы решаете отправиться в подземелье " << "\n";
-                            system("cls");
                             cout << "Выберите сложность подземелья:" << "\n";
                             cout << "Обычное подземелье - 1" << "\n";
                             cout << "Героическое подземелье - 2" << "\n";
                             cout << "Эпохальное подземелье - 3" << "\n";
                             cin >> inst;
+                            Level::Dungeon(inst);
                             break;
                         } else if (Button == "3") {
+                            Sleep(100);
                             system("cls");
                             cout << "Вы решили вернуться к путеводному камню" << "\n";
                             i--;
                             break;
                         } else {
+                            Sleep(100);
                             system("cls");
                             cout << "Ошибка!!! " << "\n";
                             cout << "Выберите один из трёх вариантов " << "\n";
@@ -385,6 +431,7 @@ public:
                         }
                     }
                 } else if (Button == "3") {
+                    Sleep(100);
                     system("cls");
                     cout << " ---------------------" << "\n";
                     cout << "  Спасибо за игру !!! " << "\n";
@@ -392,6 +439,7 @@ public:
                     return 0;
                     break;
                 } else {
+                    Sleep(100);
                     system("cls");
                     cout << "Ошибка!!! " << "\n";
                     cout << "Выберите один из трёх вариантов " << "\n";
@@ -418,7 +466,7 @@ int main() {
     Level.Stat_Distribution(); // Начальные статы
     Level.characteristics();   // Демонстрация статов на консоли
     for (size_t i = 0; i < 1; i++) {
-        Travelling.Route_selection(); // Таверна
+        Travelling.Road_selection(); // Таверна
         if (Travelling.Specifications == "1") {
             Level.characteristics();
             Travelling.Specifications = "0";
@@ -435,6 +483,7 @@ int main() {
         }
         if (Travelling.rest == "1") // Систему скипа переделать (возврат в главный зал)
         {
+            Sleep(100);
             system("cls");
             cout << "Вы отдохнули " << "\n";
             Level.Rest();
