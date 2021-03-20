@@ -13,7 +13,9 @@ public:
     string Class, Back;
     int level = 1, Experience = 0, Skill = 1, Required_experience = 100, Gold = 200;
     double Hp, Hp_Max, Attack, Protection, Knowledge, Magic_Power, Mana;
-    // Выбор класса (возможны изменения интерфейса или статов)
+    // Выбор класса (возможны изменения интерфейса или статов) 
+
+    //проверка коммита Дани
     void Selecting_a_class() {
         for (size_t i = 0; i < 1; i++)
         {
