@@ -8,17 +8,32 @@ using std::cout;
 using std::cin;
 using std::endl;
 
+class Skill {
+    public: int manaUsage, basicDamage,magicDamage;
+    public: string name;
+};
+
+
 class Level {
 public:
     string Class, Back;
     int level = 1, Experience = 0, Skill = 1, Required_experience = 100, Gold = 200;
     double Hp, Hp_Max, Attack, Protection, Knowledge, Magic_Power, Mana;
-    // Выбор класса (возможны изменения интерфейса или статов) 
+    // Выбор класса (возможны изменения интерфейса или статов)
 
+
+
+    static void FirstDungeon(){
+    cout<<"На вас напал гоблин 1ого уровня 10HP";
+
+
+
+    }
     static void Dungeon(int difficulty){
         switch(difficulty){
             case 1:{
                 cout<<"Fucking slave!"<<endl;
+                FirstDungeon();
                 break;
             }
             case 2:{
@@ -69,7 +84,7 @@ public:
     }
 
     // Начальные статы (возможны изменения статов)
-    void Stat_Distribution() {
+    void Stat_Distribution(){
         if (Class == "Воин") {
             Hp = 120;
             Attack = 20;
@@ -452,6 +467,19 @@ class Travelling // Выбор дальнейших действий
 };
 
 int main() {
+    Skill skill[10]; // массив из 10 скилов на все классы всегда можно изменить
+    //скилл с индексом 0
+    skill[0].name = "Удар топором";
+    skill[0].manaUsage= 10; // я решил объединить ману и стамину
+    skill[0].basicDamage= 5;
+    skill[0].magicDamage = 0;
+    //Скилл с индексом 1
+    skill[1].name = "Рывок";
+    skill[1].manaUsage= 20;
+    skill[1].basicDamage= 10;
+    skill[1].magicDamage = 0;
+    //
+
     Level Level;
     Travelling Travelling;
     srand(time(NULL));
